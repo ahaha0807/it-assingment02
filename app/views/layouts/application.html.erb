@@ -9,6 +9,11 @@
   </head>
 
   <body>
+
+    <%= image_tag "logo.png", :class => "home__logo" %>
+
     <%= yield %>
+
+    <%= link_to "Home", root_path %>
   </body>
 </html>
