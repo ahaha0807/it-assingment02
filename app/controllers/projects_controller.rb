@@ -1,4 +1,7 @@
 class ProjectsController < ApplicationController
+
+    before_action :set_project, only: [:show, :edit, :update, :destroy]
+
     def index
         @projects = Project.all
     end
@@ -34,7 +37,6 @@ class ProjectsController < ApplicationController
     end
 
     def destroy
-        @project = Project.find(params[:id])
         @project.destroy
         redirect_to projects_path
     end
@@ -43,5 +45,8 @@ class ProjectsController < ApplicationController
         def project_params
             params[:project].permit(:title)   
         end
-    
+        
+        def set_project
+            @project = Project.find(params[:id])
+        end
 end
