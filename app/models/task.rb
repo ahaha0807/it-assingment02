@@ -3,4 +3,5 @@ class Task < ApplicationRecord
   validates :title, 
   presence: true
   scope :unfinished, -> { where(done: false) }
+  mount_uploader :image, ImageUploader
 end

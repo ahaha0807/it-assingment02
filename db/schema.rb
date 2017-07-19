@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20170719000211) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "title"
+    t.string "image"
     t.boolean "done", default: false
     t.integer "project_id"
     t.datetime "created_at", null: false
