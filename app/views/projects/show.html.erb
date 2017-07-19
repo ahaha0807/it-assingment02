@@ -20,9 +20,8 @@
 
 <script>
 $(function(){
-    var url = '/projects/xxx/tasks/xxx/toggle' 
     $("input[type=checkbox]").click(function{
-        $.post(url)
+        $.post('/projects/' + $(this).data('project-id') + '/tasks/' + $(this).data('id') + '/toggle')
     })
 })
 </script>
