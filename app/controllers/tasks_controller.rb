@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+    skip_before_action :verify_authenticity_token, only: [:toggle]    
+
     def create
         @project = Project.find(params[:project_id])
         @task = @project.tasks.create(task_params)
@@ -12,9 +14,10 @@ class TasksController < ApplicationController
     end
 
     def toggle
+        head :ok
         @task = Task.find(params[:id])
         @task.done = !@task.done
-        task.save
+        @task.save
     end
 
     private

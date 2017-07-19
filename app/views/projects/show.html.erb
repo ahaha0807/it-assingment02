@@ -20,8 +20,9 @@
 
 <script>
 $(function(){
-    $("input[type=checkbox]").click(function{
-        $.post('/projects/' + $(this).data('project-id') + '/tasks/' + $(this).data('id') + '/toggle')
+    $("input[type=checkbox]").click(function () {
+        var url = '/projects/' + $(this).data('project-id') + '/tasks/' + $(this).data('id') + '/toggle';
+        $.post(url);
     })
 })
 </script>
